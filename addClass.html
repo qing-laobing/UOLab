@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/select.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+		<script type="text/javascript" src="js/select-ui.min.js"></script>
+		<script type="text/javascript" src="editor/kindeditor.js"></script>
+
+		<script type="text/javascript">
+			KE.show({
+				id: 'content7',
+				cssPath: './index.css'
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(e) {
+				$(".select1").uedSelect({
+					width: 345
+				});
+				$(".select2").uedSelect({
+					width: 167
+				});
+				$(".select3").uedSelect({
+					width: 100
+				});
+			});
+		</script>
+		<script>
+			function speak() {
+				var Sname = document.getElementById("speakname").value;
+				var Stip = document.getElementById("speaktip");
+				var regMB = /^[\u4e00-\u9fa5]{2,4}$/;
+				if(!regMB.test(Sname)) {
+					Stip.innerHTML = "姓名输入不合法";
+					Stip.style = "color:red";
+				} else {
+					Stip.innerHTML = ""
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<div class="place">
+			<span>位置：</span>
+			<ul class="placeul">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">录入公开课</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="formbody">
+
+			<div id="tab1" class="tabson">
+				<ul class="forminfo">
+					<li>
+						<label>日期<b>*</b></label>
+						<input type="date" value="2020-01-01" min="2020-01-01" max="2025-12-31" class="dfinput" style="width:345px;" />
+
+					</li>
+					<li>
+						<label>技术专题<b>*</b></label>
+						<input placeholder="字母汉字组合，1-50个字符" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>主讲人<b>*</b></label>
+						<input onblur="speak()" id="speakname" placeholder="2-5个汉字" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="speaktip"></i></li>
+					</li>
+					<li>
+						<label>组织人<b>*</b></label>
+						<input name="classid" placeholder="" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>地点<b>*</b></label>
+						<input placeholder="" name="place" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>群体说明<b>*</b></label>
+						<input placeholder="" name="note" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>方式<b>*</b></label><cite><input name="way" type="radio" value="" checked />线下&nbsp;&nbsp;&nbsp;&nbsp;<input name="way" type="radio" value=""  />直播&nbsp;&nbsp;&nbsp;&nbsp;<input name="way" type="radio" value="" />录播</cite></li>
+					<li>
+						<label>创新学分值<b>*</b></label>
+						<input placeholder="" name="grade" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>参加人数<b>*</b></label>
+						<input placeholder="" name="num" type="text" class="dfinput" style="width:345px;" />
+					</li>
+
+					<li><label>备注<b>*</b></label>
+
+						<textarea id="content7" name="content" style="width:700px;height:250px;visibility:hidden;"></textarea>
+					</li>
+					<li><label>&nbsp;</label><input name="" type="button" class="btn" value="保存" /></li>
+				</ul>
+
+			</div>
+
+			<div id="tab2" class="tabson">
+
+				<ul class="seachform">
+
+	</body>
+
+</html>
